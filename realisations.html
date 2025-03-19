@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réalisations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Portfolio<span> kvn4real</span>
+                </div>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="projets.html">Projets</a></li>
+                        <li><a href="realisations.html">Réalisations</a></li>
+                        <li><a href="ue4.html">UE4</a></li>
+                        <li><a href="veille.html">Veille</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section principale -->
+    <section id="realisations" style="margin-top: 70px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mes Réalisations</h2>
+            </div>
+            <div class="realisations-container">
+                <div class="realisation-card">
+                    <div class="realisation-img">
+                        Réalisation 1
+                    </div>
+                    <div class="realisation-content">
+                        <h3>Environment 3D - Forêt mystique</h3>
+                        <p>Création d'un environnement forestier immersif avec effets de lumière dynamiques et un système de particules avancé pour simuler la brume et les effets atmosphériques.</p>
+                    </div>
+                </div>
+                
+                <div class="realisation-card">
+                    <div class="realisation-img">
+                        Réalisation 2
+                    </div>
+                    <div class="realisation-content">
+                        <h3>Personnage 3D - Guerrier</h3>
+                        <p>Modélisation, texturage et animation d'un personnage guerrier pour un jeu d'action-aventure, incluant des animations de combat fluides et réalistes.</p>
+                    </div>
+                </div>
+                
+                <div class="realisation-card">
+                    <div class="realisation-img">
+                        Réalisation 3
+                    </div>
+                    <div class="realisation-content">
+                        <h3>Interface utilisateur - Menu principal</h3>
+                        <p>Conception et implémentation d'une interface utilisateur intuitive pour le menu principal d'un jeu, combinant esthétique moderne et fonctionnalité.</p>
+                    </div>
+                </div>
+                
+                <div class="realisation-card">
+                    <div class="realisation-img">
+                        Réalisation 4
+                    </div>
+                    <div class="realisation-content">
+                        <h3>Système de destruction physique</h3>
+                        <p>Développement d'un système de destruction physique réaliste pour les objets du jeu, permettant des interactions dynamiques avec l'environnement.</p>
+                    </div>
+                </div>
+                
+                <div class="realisation-card">
+                    <div class="realisation-img">
+                        Réalisation 5
+                    </div>
+                    <div class="realisation-content">
+                        <h3>Effets visuels - Magie</h3>
+                        <p>Création d'effets visuels spectaculaires pour les sorts et capacités magiques, utilisant des systèmes de particules avancés et des effets de post-traitement.</p>
+                    </div>
+                </div>
+                
+                <div class="realisation-card">
+                    <div class="realisation-img">
+                        Réalisation 6
+                    </div>
+                    <div class="realisation-content">
+                        <h3>Prototype de jeu mobile</h3>
+                        <p>Développement d'un prototype de jeu mobile incluant des mécaniques de jeu uniques et une interface adaptée aux écrans tactiles.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    Portfolio<span>.</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Portfolio. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script pour le menu mobile
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('nav');
+        
+        navToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

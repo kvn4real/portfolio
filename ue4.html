@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UE4</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Portfolio<span> kvn4real</span>
+                </div>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="projets.html">Projets</a></li>
+                        <li><a href="realisations.html">Réalisations</a></li>
+                        <li><a href="ue4.html">UE4</a></li>
+                        <li><a href="veille.html">Veille</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section principale -->
+    <section id="ue4" style="margin-top: 70px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Unreal Engine 4</h2>
+            </div>
+            <div class="ue4-container">
+                <div class="mission-card">
+                    <h3>Blueprints</h3>
+                    <p>Maîtrise du système de programmation visuelle d'UE4 permettant de créer des logiques de jeu complexes sans écrire de code. Utilisation des blueprints pour développer des systèmes d'interaction, des mécaniques de gameplay et des comportements d'IA.</p>
+                    <p>Projets réalisés :</p>
+                    <ul>
+                        <li>Système d'inventaire interactif</li>
+                        <li>IA comportementale avancée</li>
+                        <li>Système de quêtes dynamiques</li>
+                    </ul>
+                </div>
+                
+                <div class="mission-card">
+                    <h3>Level Design</h3>
+                    <p>Création d'environnements de jeu immersifs et équilibrés. Utilisation des outils de terrain, de peinture de végétation et de placement d'objets pour construire des niveaux intéressants et visuellement attrayants.</p>
+                    <p>Compétences développées :</p>
+                    <ul>
+                        <li>Conception de lay-out de niveau</li>
+                        <li>Optimisation des performances</li>
+                        <li>Éclairage et ambiance</li>
+                    </ul>
+                </div>
+                
+                <div class="mission-card">
+                    <h3>Matériaux et Shaders</h3>
+                    <p>Création de matériaux complexes et de shaders personnalisés pour obtenir des effets visuels uniques. Maîtrise de l'éditeur de matériaux pour développer des surfaces réalistes et stylisées.</p>
+                    <p>Techniques maîtrisées :</p>
+                    <ul>
+                        <li>Matériaux procéduraux</li>
+                        <li>Effets de vieillissement et d'usure</li>
+                        <li>Shaders pour l'eau et les surfaces réfléchissantes</li>
+                    </ul>
+                </div>
+                
+                <div class="mission-card">
+                    <h3>Particules et VFX</h3>
+                    <p>Développement d'effets visuels impressionnants grâce au système de particules Cascade et Niagara. Création d'effets d'explosion, de feu, de magie et d'environnement pour enrichir l'expérience de jeu.</p>
+                    <p>Réalisations notables :</p>
+                    <ul>
+                        <li>Système météorologique dynamique</li>
+                        <li>Effets magiques avancés</li>
+                        <li>Simulation de fumée et de feu réaliste</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    Portfolio<span>.</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Portfolio. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script pour le menu mobile
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('nav');
+        
+        navToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
