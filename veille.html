@@ -43,6 +43,7 @@
                 <div class="rss-grid">
                     <div id="rss-feed-1" class="rss-container"></div>
                     <div id="rss-feed-2" class="rss-container"></div>
+                    <div id="rss-feed-3" class="rss-container"></div>
                 </div>
             </div>
         </div>
@@ -102,7 +103,8 @@
         // Appel de la fonction pour chaque flux RSS au chargement de la page
         document.addEventListener("DOMContentLoaded", () => {
             fetchRSSFeed("https://www.google.fr/alerts/feeds/07139015662446586465/8198626181218586914", "rss-feed-1"); // Premier flux RSS
-            fetchRSSFeed("URL_DU_DEUXIEME_FLUX_RSS", "rss-feed-2"); // Remplacez par l'URL de votre deuxième flux RSS
+            fetchRSSFeed("https://www.google.fr/alerts/feeds/18061097859808496187/3206061554952103618", "rss-feed-2"); // Remplacez par l'URL de votre deuxième flux RSS
+            fetchRSSFeed("https://www.google.fr/alerts/feeds/07139015662446586465/18340364190007240455", "rss-feed-3");
         });
 
         // Script pour le menu mobile
