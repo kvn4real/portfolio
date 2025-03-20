@@ -40,7 +40,10 @@
             </div>
             <div class="veille-content">
                 <h3>Flux RSS de ma veille</h3>
-                <div id="rss-feed" class="rss-container"></div>
+                <div class="rss-grid">
+                    <div id="rss-feed-1" class="rss-container"></div>
+                    <div id="rss-feed-2" class="rss-container"></div>
+                </div>
             </div>
         </div>
     </section>
@@ -66,8 +69,7 @@
 
     <script>
         // Fonction pour récupérer et afficher le flux RSS
-        async function fetchRSSFeed() {
-            const feedURL = "https://www.google.fr/alerts/feeds/07139015662446586465/8198626181218586914"; // Votre URL RSS
+        async function fetchRSSFeed(feedURL, containerID) {
             const proxyURL = "https://api.allorigins.win/get?url=" + encodeURIComponent(feedURL); // Proxy pour contourner CORS
 
             try {
@@ -77,7 +79,7 @@
                 const xmlDoc = parser.parseFromString(data.contents, "text/xml");
 
                 const items = xmlDoc.querySelectorAll("entry"); // Google Alerts utilise <entry> au lieu de <item>
-                const feedContainer = document.getElementById("rss-feed");
+                const feedContainer = document.getElementById(containerID);
 
                 items.forEach(item => {
                     const title = item.querySelector("title").textContent;
@@ -97,13 +99,16 @@
             }
         }
 
-        // Appel de la fonction au chargement de la page
-        document.addEventListener("DOMContentLoaded", fetchRSSFeed);
+        // Appel de la fonction pour chaque flux RSS au chargement de la page
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchRSSFeed("https://www.google.fr/alerts/feeds/07139015662446586465/8198626181218586914", "rss-feed-1"); // Premier flux RSS
+            fetchRSSFeed("URL_DU_DEUXIEME_FLUX_RSS", "rss-feed-2"); // Remplacez par l'URL de votre deuxième flux RSS
+        });
 
         // Script pour le menu mobile
         const navToggle = document.querySelector('.nav-toggle');
         const nav = document.querySelector('nav');
-        
+
         navToggle.addEventListener('click', () => {
             nav.classList.toggle('active');
         });
