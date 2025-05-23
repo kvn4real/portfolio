@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stages</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    Portfolio<span> Kevin Bayeul</span>
+                </div>
+                <button class="nav-toggle" aria-label="toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Accueil</a></li>
+                        <li><a href="projets.html">Projets</a></li>
+                        <li><a href="realisations.html">Réalisations</a></li>
+                        <li><a href="e4.html">UE4</a></li>
+                        <li><a href="veille.html">Veille</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section principale -->
+    <section id="stages" style="margin-top: 70px;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Mes Stages</h2>
+            </div>
+
+            <div class="stage">
+                <h3>Stage n°1 – ALD Automotive (Ayvens)</h3>
+                <p><strong>Durée :</strong> 5 semaines</p>
+                <p><strong>Lieu :</strong> Clichy</p>
+                <p><strong>Mission :</strong> Assistance au support informatique de niveau 1 : configuration de postes, dépannage, gestion des tickets via GLPI, interventions auprès des utilisateurs.</p>
+            </div>
+
+            <div class="stage">
+                <h3>Stage n°2 – ALD Automotive (Ayvens)</h3>
+                <p><strong>Durée :</strong> 5 semaines</p>
+                <p><strong>Lieu :</strong> Clichy/p>
+                <p><strong>Mission :</strong> Approfondissement du support IT : préparation d'images système, participation à la migration Windows, gestion de parc, et sensibilisation à la cybersécurité de base.</p>
+            </div>
+
+            <div class="stage-message">
+                <p>Un troisième stage est prévu du <strong>2 juin au 4 juillet 2025</strong> dans l'entreprise <stong>Ayvens</stong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    Portfolio<span>.</span>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2025 Portfolio. Tous droits réservés.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script pour le menu mobile
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('nav');
+        
+        navToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
