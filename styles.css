@@ -24,7 +24,7 @@
 }
 
 body {
-    font-family: 'Gully', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Appliquer Gully */
+    font-family: 'Gully', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--color-dark);
     background-color: var(--color-light);
@@ -136,6 +136,7 @@ nav ul li a:hover::after {
         text-align: center;
     }
 }
+
 /* Sections principales */
 section {
     padding: 5rem 0;
@@ -444,37 +445,7 @@ footer {
     margin-top: 1rem;
 }
 
-/* Media Queries */
 @media screen and (max-width: 768px) {
-    .nav-toggle {
-        display: block;
-    }
-
-    nav {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: var(--color-primary);
-        padding: 1rem 0;
-        transform: translateY(-150%);
-        transition: transform 0.3s ease;
-    }
-
-    nav.active {
-        transform: translateY(0);
-    }
-
-    nav ul {
-        flex-direction: column;
-    }
-
-    nav ul li {
-        margin: 1rem 0;
-        margin-left: 0;
-        text-align: center;
-    }
-
     .hero-content h1 {
         font-size: 2.5rem;
     }
@@ -533,4 +504,48 @@ footer {
 .rss-item p {
     color: var(--color-dark);
     margin-bottom: 0;
+}
+
+/* Bouton info */
+.info-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    color: var(--color-primary);
+    margin-left: 5px;
+}
+
+/* Modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
 }
