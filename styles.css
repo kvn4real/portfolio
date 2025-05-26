@@ -7,11 +7,11 @@
 
 /* Variables pour les couleurs */
 :root {
-    --color-primary: #C28B5F;
-    --color-secondary: #BD5F0F;
-    --color-white: #FFFFFF;
-    --color-dark: #333333;
-    --color-light: #F5F5F5;
+    --color-primary: #2A6FBA;   /* Bleu profond, professionnel */
+    --color-secondary: #50A7F6; /* Bleu clair, dynamique et moderne */
+    --color-white: #FFFFFF;     /* Blanc classique pour le fond ou le texte */
+    --color-dark: #1C1F26;      /* Presque noir, parfait pour les titres */
+    --color-light: #F0F4F8;     /* Bleu très pâle, idéal en fond ou section */
 }
 
 /* Charger la police Gully */
