@@ -3,109 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erreur - Problème technique</title>
+    <title>Erreur</title>
     <style>
-        /* Reset et styles de base */
+        /* Réutilisation de vos variables CSS existantes */
+        :root {
+            --color-primary: #C28B5F;
+            --color-secondary: #BD5F0F;
+            --color-white: #FFFFFF;
+            --color-dark: #333333;
+            --color-light: #F5F5F5;
+        }
+
+        /* Réutilisation de votre reset et polices */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
-        
+
         body {
-            background-color: #f8f9fa;
-            color: #343a40;
+            font-family: 'Gully', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
+            color: var(--color-dark);
+            background-color: var(--color-light);
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center;
+        }
+
+        /* Style cohérent avec votre header existant */
+        header {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
             justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
-            text-align: center;
+            align-items: center;
         }
-        
-        /* Conteneur principal */
+
+        /* Conteneur d'erreur adapté à votre style */
         .error-container {
-            max-width: 600px;
-            width: 100%;
-            padding: 40px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
         }
-        
-        /* Icône d'erreur */
+
         .error-icon {
-            font-size: 72px;
-            color: #dc3545;
-            margin-bottom: 20px;
+            font-size: 5rem;
+            color: var(--color-secondary);
+            margin-bottom: 2rem;
         }
-        
-        /* Titre */
-        h1 {
-            font-size: 28px;
-            margin-bottom: 15px;
-            color: #212529;
+
+        .error-title {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
         }
-        
-        /* Message */
-        p {
-            font-size: 16px;
-            margin-bottom: 30px;
-            color: #6c757d;
+
+        .error-title::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--color-secondary);
+            bottom: 0;
+            left: 25%;
         }
-        
-        /* Bouton */
+
+        .error-message {
+            font-size: 1.2rem;
+            color: var(--color-dark);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+        }
+
+        /* Réutilisation de votre style de bouton existant */
         .btn {
             display: inline-block;
-            padding: 10px 24px;
-            background-color: #007bff;
-            color: white;
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
             text-decoration: none;
-            border-radius: 4px;
-            font-weight: 500;
-            transition: background-color 0.3s;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-secondary);
         }
-        
+
         .btn:hover {
-            background-color: #0069d9;
+            background-color: transparent;
+            color: var(--color-secondary);
         }
-        
-        /* Détails techniques (optionnel) */
-        .technical-details {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e9ecef;
-            font-size: 14px;
-            color: #868e96;
+
+        /* Footer cohérent avec votre style */
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 1.5rem 0;
+            text-align: center;
+            margin-top: auto;
         }
-        
-        /* Responsive */
-        @media (max-width: 576px) {
-            .error-container {
-                padding: 30px 20px;
+
+        /* Responsive comme dans votre CSS */
+        @media screen and (max-width: 768px) {
+            .error-icon {
+                font-size: 4rem;
             }
             
-            h1 {
-                font-size: 24px;
+            .error-title {
+                font-size: 2rem;
+            }
+            
+            .error-message {
+                font-size: 1rem;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .error-icon {
+                font-size: 3rem;
+            }
+            
+            .error-title {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="error-container">
-        <div class="error-icon">⚠️</div>
-        <h1>Une erreur s'est produite</h1>
-        <p>Désolé, nous rencontrons actuellement un problème technique. Notre équipe a été notifiée et travaille à la résolution du problème.</p>
-        <p>Veuillez réessayer ultérieurement ou contacter notre support si le problème persiste.</p>
-        <a href="index.html" class="btn">Retour à l'accueil</a>
-        
-        <div class="technical-details">
-            <p>Code d'erreur: 500 - Internal Server Error</p>
-            <p>ID de la requête: REQ-123456789</p>
+    <header>
+        <div class="header-content">
+            <h1>Erreur</h1>
         </div>
-    </div>
+    </header>
+
+    <main>
+        <div class="error-container">
+            <div class="error-icon">!</div>
+            <h2 class="error-title">Oups, une erreur est survenue</h2>
+            <p class="error-message">Nous rencontrons actuellement un problème technique. Notre équipe a été notifiée et travaille à résoudre le problème.</p>
+            <a href="/" class="btn">Retour à l'accueil</a>
+        </div>
+    </main>
+
+    <footer>
+        <div class="copyright">
+            <p>&copy; 2023 Tous droits réservés</p>
+        </div>
+    </footer>
 </body>
 </html>
