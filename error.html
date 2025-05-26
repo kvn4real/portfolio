@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erreur - Problème technique</title>
+    <style>
+        /* Reset et styles de base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        /* Conteneur principal */
+        .error-container {
+            max-width: 600px;
+            width: 100%;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Icône d'erreur */
+        .error-icon {
+            font-size: 72px;
+            color: #dc3545;
+            margin-bottom: 20px;
+        }
+        
+        /* Titre */
+        h1 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #212529;
+        }
+        
+        /* Message */
+        p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            color: #6c757d;
+        }
+        
+        /* Bouton */
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #0069d9;
+        }
+        
+        /* Détails techniques (optionnel) */
+        .technical-details {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e9ecef;
+            font-size: 14px;
+            color: #868e96;
+        }
+        
+        /* Responsive */
+        @media (max-width: 576px) {
+            .error-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-icon">⚠️</div>
+        <h1>Une erreur s'est produite</h1>
+        <p>Désolé, nous rencontrons actuellement un problème technique. Notre équipe a été notifiée et travaille à la résolution du problème.</p>
+        <p>Veuillez réessayer ultérieurement ou contacter notre support si le problème persiste.</p>
+        <a href="index.html" class="btn">Retour à l'accueil</a>
+        
+        <div class="technical-details">
+            <p>Code d'erreur: 500 - Internal Server Error</p>
+            <p>ID de la requête: REQ-123456789</p>
+        </div>
+    </div>
+</body>
+</html>
