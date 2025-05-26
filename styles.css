@@ -178,7 +178,7 @@ section:nth-child(even) {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://cdn.discordapp.com/attachments/1082246612446879785/1351309951393333321/8FAAAAAElFTkSuQmCC.png?ex=67d9e8f6&is=67d89776&hm=3c36de68972c3b847ae5fca3a233080f5514499a519b974d9ff26c27e7117e0c&');
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://ibb.co/rGngC10Z');
     background-size: cover;
     background-position: center;
     color: var(--color-white);
