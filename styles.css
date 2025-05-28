@@ -33,7 +33,7 @@ body {
 
 /* En-tête */
 header {
-    background-color: var(--color-secondary);
+    background-color: var(--color-primary);
     color: var(--color-white);
     padding: 1rem 0;
     position: fixed;
