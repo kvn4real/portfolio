@@ -261,7 +261,8 @@ section:nth-child(even) {
 
 .btn-download {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 6px 14px; /* moins de padding */
+    font-size: 1rem;   /* taille de texte réduite */
     background-color: #007BFF;
     color: #fff;
     text-decoration: none;
