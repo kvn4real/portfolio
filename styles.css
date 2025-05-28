@@ -433,7 +433,7 @@ textarea.form-control {
     min-height: 150px;
 }
 
- /* Footer reste en bas */
+  /* Footer reste en bas */
         footer {
             background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
             color: var(--color-white);
@@ -547,13 +547,14 @@ textarea.form-control {
             justify-content: center;
             width: 45px;
             height: 45px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15);
             color: var(--color-white);
             border-radius: 50%;
             text-decoration: none;
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            font-size: 1.2rem;
         }
 
         .social-link:hover {
@@ -573,16 +574,13 @@ textarea.form-control {
             font-weight: 700;
             color: var(--color-white);
             margin-bottom: 0.5rem;
-            background: linear-gradient(45deg, #3498db, #2980b9, #1e3c72);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ffffff, #e3f2fd, #bbdefb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
 
-        .copyright {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.9rem;
-            margin-top: 1rem;
 
         /* Animations */
         @keyframes fadeInUp {
