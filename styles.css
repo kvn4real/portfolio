@@ -180,7 +180,8 @@ section:nth-child(even) {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://ibb.co/rGngC10Z');
+    justify-content: center; /* centre le contenu */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://i.ibb.co/6R623fw4/fond.jpg'); /* <-- mets ici le lien direct */
     background-size: cover;
     background-position: center;
     color: var(--color-white);
