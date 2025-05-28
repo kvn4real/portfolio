@@ -571,3 +571,39 @@ footer {
     cursor: pointer;
     color: #333;
 }
+
+/* Structure pour footer collant */
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Gully', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    scroll-behavior: smooth;
+    min-height: 100vh; /* Hauteur minimale de 100% de la viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Le contenu principal doit prendre l'espace disponible */
+main {
+    flex: 1;
+}
+
+/* Si vous n'avez pas de balise main, appliquez flex: 1 au conteneur principal */
+/* Par exemple, si votre contenu est dans une div avec une classe spécifique */
+.page-content {
+    flex: 1;
+}
+
+/* Footer reste en bas */
+footer {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: auto; /* Cette règle était déjà présente mais maintenant elle sera effective */
+}
