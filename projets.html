@@ -3,9 +3,393 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <title>Projets - Kevin Bayeul</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Variables pour les couleurs */
+        :root {
+            --color-primary: #C28B5F;
+            --color-secondary: #BD5F0F;
+            --color-white: #FFFFFF;
+            --color-dark: #333333;
+            --color-light: #F5F5F5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--color-dark);
+            background-color: var(--color-light);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* En-tête */
+        header {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: transparent;
+            border: none;
+            color: var(--color-white);
+            font-size: 1.5rem;
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: var(--color-white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: var(--color-primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--color-primary);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+
+        /* Contenu principal */
+        main {
+            flex: 1;
+            padding-top: 100px;
+            padding-bottom: 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h1 {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            display: inline-block;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .section-title h1::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--color-secondary);
+            bottom: 0;
+            left: 25%;
+        }
+
+        /* Grille des projets */
+        .projets-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+        }
+
+        .projet-card {
+            background-color: var(--color-white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .projet-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .projet-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: 3rem;
+            position: relative;
+        }
+
+        .projet-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .projet-img.placeholder {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+        }
+
+        .projet-content {
+            padding: 1.5rem;
+        }
+
+        .projet-content h3 {
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            font-size: 1.3rem;
+        }
+
+        .projet-content p {
+            color: var(--color-dark);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .projet-btn {
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .projet-btn:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Popup Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content {
+            background-color: var(--color-white);
+            padding: 2rem;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s ease;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            color: var(--color-dark);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--color-secondary);
+        }
+
+        .modal-title {
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .modal-description {
+            color: var(--color-dark);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .modal-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--color-secondary);
+            color: var(--color-white);
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .modal-download:hover {
+            background-color: var(--color-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: var(--color-white);
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--color-secondary);
+        }
+
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-primary);
+                padding: 1rem 0;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+            }
+
+            nav.active {
+                transform: translateY(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 1rem 0;
+                text-align: center;
+            }
+
+            .projets-container {
+                grid-template-columns: 1fr;
+                padding: 0;
+            }
+
+            .modal-content {
+                width: 95%;
+                padding: 1.5rem;
+            }
+
+            .section-title h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- En-tête -->
@@ -19,9 +403,9 @@
                     <ul>
                         <li><a href="index.html">Accueil</a></li>
                         <li><a href="stage.html">Stage</a></li>
-                        <li><a href="projets.html">Projets</a></li>
+                        <li><a href="projets.html" class="active">Projets</a></li>
                         <li><a href="realisations.html">Réalisations</a></li>
-                        <li><a href="bts.html">BTS SIO</a></li>
+                        <li><a href="e4.html">BTS SIO</a></li>
                         <li><a href="veille.html">Veille</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
@@ -30,26 +414,228 @@
         </div>
     </header>
 
-    <!-- Section principale -->
-    <section id="projets" style="margin-top: 70px;">
+    <!-- Contenu principal -->
+    <main>
         <div class="container">
             <div class="section-title">
-                <h2>Mes Projets</h2>
+                <h1>Mes Projets</h1>
             </div>
 
-            <!-- Message en cours de programmation -->
-            <div class="info-message" style="background-color: #ffeeba; color: #856404; padding: 15px; border: 1px solid #ffeeba; border-radius: 5px; margin-bottom: 20px; text-align: center;">
-                ⚠️ Cette section est en cours de programmation. Du contenu sera ajouté prochainement.
-            </div>
-    </section>
+            <div class="projets-container">
+                <!-- Projet 1 -->
+                <div class="projet-card" onclick="openModal('modal1')">
+                    <div class="projet-img placeholder">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="projet-content">
+                        <h3>Application Web de Gestion</h3>
+                        <p>Développement d'une application web complète avec authentification utilisateur et base de données.</p>
+                        <button class="projet-btn">Voir le détail</button>
+                    </div>
+                </div>
 
-    <!-- Pied de page -->
+                <!-- Projet 2 -->
+                <div class="projet-card" onclick="openModal('modal2')">
+                    <div class="projet-img placeholder">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="projet-content">
+                        <h3>Application Mobile React Native</h3>
+                        <p>Création d'une application mobile cross-platform pour la gestion de tâches.</p>
+                        <button class="projet-btn">Voir le détail</button>
+                    </div>
+                </div>
+
+                <!-- Projet 3 -->
+                <div class="projet-card" onclick="openModal('modal3')">
+                    <div class="projet-img placeholder">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="projet-content">
+                        <h3>Système de Base de Données</h3>
+                        <p>Conception et implémentation d'un système de gestion de base de données pour une entreprise.</p>
+                        <button class="projet-btn">Voir le détail</button>
+                    </div>
+                </div>
+
+                <!-- Projet 4 -->
+                <div class="projet-card" onclick="openModal('modal4')">
+                    <div class="projet-img placeholder">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <div class="projet-content">
+                        <h3>Infrastructure Réseau</h3>
+                        <p>Mise en place d'une infrastructure réseau sécurisée pour une PME.</p>
+                        <button class="projet-btn">Voir le détail</button>
+                    </div>
+                </div>
+
+                <!-- Projet 5 -->
+                <div class="projet-card" onclick="openModal('modal5')">
+                    <div class="projet-img placeholder">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="projet-content">
+                        <h3>Sécurité Informatique</h3>
+                        <p>Audit de sécurité et mise en place de mesures de protection pour un système d'information.</p>
+                        <button class="projet-btn">Voir le détail</button>
+                    </div>
+                </div>
+
+                <!-- Projet 6 -->
+                <div class="projet-card" onclick="openModal('modal6')">
+                    <div class="projet-img placeholder">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="projet-content">
+                        <h3>Analyse de Données</h3>
+                        <p>Développement d'un tableau de bord analytique avec visualisation de données en temps réel.</p>
+                        <button class="projet-btn">Voir le détail</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modals pour chaque projet -->
+    
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal1')">&times;</button>
+            <h2 class="modal-title">Application Web de Gestion</h2>
+            <div class="modal-description">
+                <p>Ce projet consistait à développer une application web complète de gestion d'entreprise utilisant les technologies suivantes :</p>
+                <ul>
+                    <li><strong>Frontend :</strong> HTML5, CSS3, JavaScript ES6, Bootstrap</li>
+                    <li><strong>Backend :</strong> PHP 8.0, MySQL</li>
+                    <li><strong>Fonctionnalités :</strong> Authentification sécurisée, CRUD complet, tableaux de bord, export PDF</li>
+                </ul>
+                <p>L'application permet la gestion des utilisateurs, des produits, des commandes et génère des rapports automatisés. Le projet a été réalisé en équipe de 3 personnes sur une durée de 2 mois.</p>
+                <p><strong>Compétences développées :</strong> Architecture MVC, sécurité web, optimisation des requêtes SQL, responsive design.</p>
+            </div>
+            <a href="#" class="modal-download">
+                <i class="fas fa-download"></i>
+                Télécharger la documentation
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal2')">&times;</button>
+            <h2 class="modal-title">Application Mobile React Native</h2>
+            <div class="modal-description">
+                <p>Développement d'une application mobile cross-platform de gestion de tâches avec les caractéristiques suivantes :</p>
+                <ul>
+                    <li><strong>Technologies :</strong> React Native, Redux, Firebase</li>
+                    <li><strong>Fonctionnalités :</strong> Synchronisation cloud, notifications push, mode hors-ligne</li>
+                    <li><strong>Plateformes :</strong> iOS et Android</li>
+                </ul>
+                <p>L'application offre une interface intuitive pour organiser ses tâches quotidiennes, avec système de catégories, rappels et statistiques personnalisées. Integration complète avec Firebase pour l'authentification et le stockage des données.</p>
+                <p><strong>Défis relevés :</strong> Optimisation des performances, gestion de l'état complexe, design adaptatif multi-plateformes.</p>
+            </div>
+            <a href="#" class="modal-download">
+                <i class="fas fa-download"></i>
+                Télécharger la documentation
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal3')">&times;</button>
+            <h2 class="modal-title">Système de Base de Données</h2>
+            <div class="modal-description">
+                <p>Conception et implémentation d'un système de gestion de base de données pour une entreprise de distribution :</p>
+                <ul>
+                    <li><strong>SGBD :</strong> PostgreSQL avec optimisations avancées</li>
+                    <li><strong>Modélisation :</strong> Modèle conceptuel, logique et physique</li>
+                    <li><strong>Performance :</strong> Index optimisés, requêtes complexes, vues matérialisées</li>
+                </ul>
+                <p>Le système gère l'ensemble des processus métier : gestion des stocks, commandes, facturation, reporting. Mise en place de procédures stockées et triggers pour automatiser les processus critiques.</p>
+                <p><strong>Résultats :</strong> Amélioration de 40% des performances des requêtes, réduction significative des erreurs de saisie.</p>
+            </div>
+            <a href="#" class="modal-download">
+                <i class="fas fa-download"></i>
+                Télécharger la documentation
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal4')">&times;</button>
+            <h2 class="modal-title">Infrastructure Réseau</h2>
+            <div class="modal-description">
+                <p>Conception et déploiement d'une infrastructure réseau complète pour une PME de 50 employés :</p>
+                <ul>
+                    <li><strong>Équipements :</strong> Switches managés, routeurs Cisco, points d'accès WiFi 6</li>
+                    <li><strong>Sécurité :</strong> Firewall, VPN site-to-site, segmentation VLAN</li>
+                    <li><strong>Services :</strong> DNS, DHCP, serveur de fichiers, sauvegarde automatisée</li>
+                </ul>
+                <p>Le projet incluait l'analyse des besoins, la planification, l'installation physique et la configuration complète. Mise en place d'une politique de sécurité stricte avec monitoring 24/7.</p>
+                <p><strong>Livrables :</strong> Documentation technique complète, plan de maintenance, formation des utilisateurs.</p>
+            </div>
+            <a href="#" class="modal-download">
+                <i class="fas fa-download"></i>
+                Télécharger la documentation
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal 5 -->
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal5')">&times;</button>
+            <h2 class="modal-title">Sécurité Informatique</h2>
+            <div class="modal-description">
+                <p>Audit de sécurité complet et mise en œuvre de mesures de protection pour un système d'information :</p>
+                <ul>
+                    <li><strong>Audit :</strong> Tests de pénétration, analyse des vulnérabilités, évaluation des risques</li>
+                    <li><strong>Solutions :</strong> Chiffrement des données, authentification forte, SIEM</li>
+                    <li><strong>Conformité :</strong> Mise en conformité RGPD, politique de sécurité</li>
+                </ul>
+                <p>Identification de 15 vulnérabilités critiques et mise en place d'un plan de remédiation complet. Formation du personnel aux bonnes pratiques de sécurité et mise en place d'un SOC (Security Operations Center).</p>
+                <p><strong>Impact :</strong> Réduction de 90% des incidents de sécurité, amélioration significative de la posture sécuritaire.</p>
+            </div>
+            <a href="#" class="modal-download">
+                <i class="fas fa-download"></i>
+                Télécharger la documentation
+            </a>
+        </div>
+    </div>
+
+    <!-- Modal 6 -->
+    <div id="modal6" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modal6')">&times;</button>
+            <h2 class="modal-title">Analyse de Données</h2>
+            <div class="modal-description">
+                <p>Développement d'une solution complète d'analyse et de visualisation de données :</p>
+                <ul>
+                    <li><strong>Technologies :</strong> Python, Pandas, NumPy, Matplotlib, Tableau</li>
+                    <li><strong>Sources :</strong> APIs REST, fichiers CSV, bases de données SQL</li>
+                    <li><strong>Fonctionnalités :</strong> ETL automatisé, tableaux de bord interactifs, alertes</li>
+                </ul>
+                <p>La solution traite plus de 100 000 enregistrements quotidiens et génère des insights business en temps réel. Mise en place d'algorithmes de machine learning pour la prédiction de tendances.</p>
+                <p><strong>Bénéfices :</strong> Réduction de 60% du temps d'analyse, amélioration de la prise de décision stratégique.</p>
+            </div>
+            <a href="#" class="modal-download">
+                <i class="fas fa-download"></i>
+                Télécharger la documentation
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo">
-                    Portfolio<span>.</span>
-                </div>
+                <p>Portfolio Kevin Bayeul</p>
                 <div class="social-links">
                     <a href="#"><i class="fab fa-linkedin"></i></a>
                     <a href="#"><i class="fab fa-github"></i></a>
@@ -63,12 +649,41 @@
     </footer>
 
     <script>
-        // Script pour le menu mobile
-        const navToggle = document.querySelector('.nav-toggle');
-        const nav = document.querySelector('nav');
-        
-        navToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
+        // Navigation mobile
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('nav').classList.toggle('active');
+        });
+
+        // Gestion des modals
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Fermer modal avec Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const activeModal = document.querySelector('.modal.active');
+                if (activeModal) {
+                    activeModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+        });
+
+        // Fermer modal en cliquant à l'extérieur
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
         });
     </script>
 </body>
