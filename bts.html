@@ -3,27 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTS - Kevin Bayeul</title>
+    <title>BTS SIO - Kevin Bayeul</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <!-- En-tête -->
     <header>
         <div class="container">
             <div class="header-content">
-                <button class="nav-toggle" aria-label="toggle navigation">
+                <div class="logo">
+                    <h1>Kevin Bayeul</h1>
+                </div>
+                <button class="nav-toggle" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
-                <nav>
-                    <ul>
-                        <li><a href="index.html">Accueil</a></li>
-                        <li><a href="stage.html">Stage</a></li>
-                        <li><a href="projets.html">Projets</a></li>
-                        <li><a href="realisations.html">Réalisations</a></li>
-                        <li><a href="bts.html">BTS SIO</a></li>
-                        <li><a href="veille.html">Veille</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li><a href="index.html" class="nav-link">Accueil</a></li>
+                        <li><a href="stage.html" class="nav-link">Stage</a></li>
+                        <li><a href="projets.html" class="nav-link">Projets</a></li>
+                        <li><a href="realisations.html" class="nav-link">Réalisations</a></li>
+                        <li><a href="bts.html" class="nav-link active">BTS SIO</a></li>
+                        <li><a href="veille.html" class="nav-link">Veille</a></li>
+                        <li><a href="contact.html" class="nav-link">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -31,73 +34,161 @@
     </header>
 
     <!-- Section principale -->
-<section id="ue4" style="margin-top: 70px;">
-    <div class="container">
-        <div class="section-title">
-            <h2>BTS SIO</h2>
-        </div>
+    <main class="main-content">
+        <section class="bts-section">
+            <div class="container">
+                <div class="section-header">
+                    <h1 class="section-title">BTS SIO</h1>
+                    <p class="section-subtitle">Services Informatiques aux Organisations</p>
+                </div>
 
-        <div class="mission-card">
-            <h3>Présentation du BTS SIO</h3>
-            <p>Le BTS SIO (Services Informatiques aux Organisations) est une formation de deux ans axée sur les métiers de l'informatique. Il prépare les étudiants à intervenir dans les entreprises pour installer, maintenir, sécuriser et développer des solutions informatiques adaptées aux besoins des utilisateurs.</p>
-            <p>Deux spécialités sont proposées :</p>
-            <ul>
-                <li><strong>SLAM (Solutions Logicielles et Applications Métiers)</strong> : développement d'applications, sites web, logiciels, bases de données.</li>
-                <li><strong>SISR (Solutions d’Infrastructure, Systèmes et Réseaux)</strong> : maintenance de réseaux, systèmes, sécurité, virtualisation, cloud.</li>
-            </ul>
-        </div>
+                <!-- Présentation générale -->
+                <div class="content-card presentation-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-graduation-cap"></i> Présentation du BTS SIO</h2>
+                    </div>
+                    <div class="card-content">
+                        <p>Le BTS SIO (Services Informatiques aux Organisations) est une formation de deux ans axée sur les métiers de l'informatique. Il prépare les étudiants à intervenir dans les entreprises pour installer, maintenir, sécuriser et développer des solutions informatiques adaptées aux besoins des utilisateurs.</p>
+                    </div>
+                </div>
 
-        <div class="ue4-container">
-            <div class="mission-card">
-                <h3>Compétences acquises</h3>
-                <ul>
-                    <li>Analyse des besoins informatiques d’une organisation</li>
-                    <li>Développement de solutions logicielles</li>
-                    <li>Gestion et sécurisation des réseaux et systèmes</li>
-                    <li>Utilisation des outils de virtualisation et de cloud</li>
-                    <li>Travail en mode projet avec des méthodes agiles</li>
-                </ul>
-            </div>
-            
-            <div class="mission-card">
-                <h3>Stages en entreprise</h3>
-                <p>Le BTS SIO comprend deux stages en entreprise :</p>
-                <ul>
-                    <li>1re année : 5 à 6 semaines</li>
-                    <li>2e année : 5 à 6 semaines</li>
-                </ul>
-                <p>Ces stages permettent d'appliquer les compétences techniques sur le terrain, en situation réelle.</p>
-            </div>
-            
-            <div class="mission-card">
-                <h3>Débouchés</h3>
-                <ul>
-                    <li>Technicien support ou helpdesk</li>
-                    <li>Développeur web / logiciel</li>
-                    <li>Administrateur systèmes et réseaux</li>
-                    <li>Chef de projet junior</li>
-                    <li>Poursuite d’études : Licence Pro, Bachelor, Écoles d’ingénieurs</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+                <!-- Spécialités -->
+                <div class="specialites-grid">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-code"></i> SLAM</h3>
+                        </div>
+                        <div class="card-content">
+                            <h4>Solutions Logicielles et Applications Métiers</h4>
+                            <ul>
+                                <li>Développement d'applications</li>
+                                <li>Création de sites web</li>
+                                <li>Développement de logiciels</li>
+                                <li>Gestion de bases de données</li>
+                            </ul>
+                        </div>
+                    </div>
 
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-network-wired"></i> SISR</h3>
+                        </div>
+                        <div class="card-content">
+                            <h4>Solutions d'Infrastructure, Systèmes et Réseaux</h4>
+                            <ul>
+                                <li>Maintenance de réseaux</li>
+                                <li>Administration systèmes</li>
+                                <li>Sécurité informatique</li>
+                                <li>Virtualisation et cloud</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Compétences -->
+                <div class="content-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-tools"></i> Compétences acquises</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="competences-grid">
+                            <div class="competence-item">
+                                <i class="fas fa-search"></i>
+                                <span>Analyse des besoins informatiques d'une organisation</span>
+                            </div>
+                            <div class="competence-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Développement de solutions logicielles</span>
+                            </div>
+                            <div class="competence-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Gestion et sécurisation des réseaux et systèmes</span>
+                            </div>
+                            <div class="competence-item">
+                                <i class="fas fa-cloud"></i>
+                                <span>Utilisation des outils de virtualisation et de cloud</span>
+                            </div>
+                            <div class="competence-item">
+                                <i class="fas fa-users"></i>
+                                <span>Travail en mode projet avec des méthodes agiles</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stages et Débouchés -->
+                <div class="bottom-grid">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-briefcase"></i> Stages en entreprise</h2>
+                        </div>
+                        <div class="card-content">
+                            <p>Le BTS SIO comprend deux stages en entreprise :</p>
+                            <div class="stage-info">
+                                <div class="stage-item">
+                                    <span class="stage-year">1ère année</span>
+                                    <span class="stage-duration">5 à 6 semaines</span>
+                                </div>
+                                <div class="stage-item">
+                                    <span class="stage-year">2ème année</span>
+                                    <span class="stage-duration">5 à 6 semaines</span>
+                                </div>
+                            </div>
+                            <p>Ces stages permettent d'appliquer les compétences techniques sur le terrain, en situation réelle.</p>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h2><i class="fas fa-rocket"></i> Débouchés</h2>
+                        </div>
+                        <div class="card-content">
+                            <div class="debouches-list">
+                                <div class="debouche-category">
+                                    <h4>Métiers</h4>
+                                    <ul>
+                                        <li>Technicien support ou helpdesk</li>
+                                        <li>Développeur web / logiciel</li>
+                                        <li>Administrateur systèmes et réseaux</li>
+                                        <li>Chef de projet junior</li>
+                                    </ul>
+                                </div>
+                                <div class="debouche-category">
+                                    <h4>Poursuites d'études</h4>
+                                    <ul>
+                                        <li>Licence Professionnelle</li>
+                                        <li>Bachelor</li>
+                                        <li>Écoles d'ingénieurs</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Pied de page -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo">
-                    Portfolio<span>.</span>
+                <div class="footer-logo">
+                    <span>Kevin Bayeul</span>
                 </div>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
                 </div>
                 <div class="copyright">
-                    <p>&copy; 2025 Portfolio. Tous droits réservés.</p>
+                    <p>&copy; 2025 Kevin Bayeul. Tous droits réservés.</p>
                 </div>
             </div>
         </div>
@@ -105,11 +196,25 @@
 
     <script>
         // Script pour le menu mobile
-        const navToggle = document.querySelector('.nav-toggle');
-        const nav = document.querySelector('nav');
-        
-        navToggle.addEventListener('click', () => {
-            nav.classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            const navToggle = document.querySelector('.nav-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            
+            if (navToggle && mainNav) {
+                navToggle.addEventListener('click', function() {
+                    mainNav.classList.toggle('active');
+                    navToggle.classList.toggle('active');
+                });
+            }
+
+            // Fermer le menu en cliquant sur un lien
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    navToggle.classList.remove('active');
+                });
+            });
         });
     </script>
 </body>
