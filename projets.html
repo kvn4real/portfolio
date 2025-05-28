@@ -6,30 +6,31 @@
     <title>Projets - Kevin Bayeul</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* Variables pour les couleurs */
-        :root {
-            --color-primary: #2A6FBA;   /* Bleu profond, professionnel */
-            --color-secondary: #50A7F6; /* Bleu clair, dynamique et moderne */
-            --color-white: #FFFFFF;     /* Blanc classique pour le fond ou le texte */
-            --color-dark: #1C1F26;      /* Presque noir, parfait pour les titres */
-            --color-light: #F0F4F8;     /* Bleu très pâle, idéal en fond ou section */
-        }
+       /* Variables pour les couleurs */
+:root {
+    --color-primary: #2A6FBA;   /* Bleu profond, professionnel */
+    --color-secondary: #50A7F6; /* Bleu clair, dynamique et moderne */
+    --color-white: #FFFFFF;     /* Blanc classique pour le fond ou le texte */
+    --color-dark: #1C1F26;      /* Presque noir, parfait pour les titres */
+    --color-light: #F0F4F8;     /* Bleu très pâle, idéal en fond ou section */
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* Charger la police Gully */
+@font-face {
+    font-family: 'Gully';
+    src: url('font/gully/fonts/otf') format('truetype'),
+         url('fonts/Gully.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--color-dark);
-            background-color: var(--color-light);
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+body {
+    font-family: 'Gully', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--color-dark);
+    background-color: var(--color-light);
+    scroll-behavior: smooth;
+}
 
         /* En-tête */
 header {
