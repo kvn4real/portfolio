@@ -774,7 +774,7 @@ footer {
     margin-bottom: 3rem;
 }
 
-.section-title {
+.section-title h6 {
     font-size: 2rem;
     color: #2a6fba;
     display: inline-block;
@@ -788,7 +788,7 @@ footer {
     font-style: italic;
 }
 
-.section-title ::after {
+.section-title h6::after {
     content: '';
     position: absolute;
     width: 50%;
