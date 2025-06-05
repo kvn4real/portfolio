@@ -774,7 +774,7 @@ footer {
     margin-bottom: 3rem;
 }
 
-.section-title h2 {
+.section-title {
     font-size: 2rem;
     color: #2a6fba;
     display: inline-block;
@@ -788,14 +788,6 @@ footer {
     font-style: italic;
 }
 
-.section-title h2::after {
-    content: '';
-    position: absolute;
-    width: 50%;
-    height: 3px;
-    background-color: var(--color-secondary);
-    bottom: 0;
-    left: 25%;
 
 /* Cards */
 .content-card {
