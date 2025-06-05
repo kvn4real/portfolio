@@ -776,9 +776,10 @@ footer {
 
 .section-title {
     font-size: 2rem;
-    color: #2c3e50;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
+    color: #2a6fba;
+    display: inline-block;
+    padding-bottom: 10px;
+    position: relative;
 }
 
 .section-subtitle {
@@ -786,6 +787,15 @@ footer {
     color: --color-primary;
     font-style: italic;
 }
+
+.section-title ::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: var(--color-secondary);
+    bottom: 0;
+    left: 25%;
 
 /* Cards */
 .content-card {
