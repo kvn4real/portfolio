@@ -777,9 +777,7 @@ footer {
 .section-title {
     font-size: 2rem;
     color: #2a6fba;
-    display: inline-block;
     padding-bottom: 10px;
-    position: relative;
 }
 
 .section-subtitle {
