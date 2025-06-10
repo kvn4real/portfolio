@@ -222,6 +222,15 @@
                 });
             });
         });
+
+        // Script pour le menu mobile
+        const navToggle = document.querySelector('.nav-toggle');
+        const nav = document.querySelector('nav');
+        
+        navToggle.addEventListener('click', () => {
+            nav.classList.toggle('active');
+        });
+    </script>
     </script>
 </body>
 </html>
